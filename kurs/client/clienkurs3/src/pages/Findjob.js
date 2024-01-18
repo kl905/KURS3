@@ -148,7 +148,7 @@ const Findjob = () => {
         </div>
     </div>
      */
-
+        //base
      <div>
          <div className="SItem">
              <div className="SItem_layout">
