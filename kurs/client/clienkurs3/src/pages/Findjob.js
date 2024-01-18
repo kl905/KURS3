@@ -22,7 +22,7 @@ const Findjob = () => {
 
     return (
         <Form>
-            <div>
+            <div className='p-2'>
                 <select value={Cl} onChange={e=>setCl(e.target.value)}>
                     <option value="A-1">A-1</option>
                     <option value="A-2">A-2</option>
