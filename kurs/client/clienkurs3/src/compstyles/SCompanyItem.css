@@ -11,9 +11,8 @@
     transition: height 1s ease-in,padding-bottom .1s,padding-top .1s;
 }
 .SItem_layout{
-    column-count: 2;
-    column-gap: 10px;
-    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
     width: 100%;
 }
 .SImg {

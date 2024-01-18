@@ -25,7 +25,6 @@ const App = observer(()=>{
 
     return (
         <BrowserRouter>
-            <ROFL/>
             <AppRouter/>
         </BrowserRouter>
     );

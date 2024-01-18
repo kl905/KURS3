@@ -1,67 +1,40 @@
 import React from 'react';
-import {Outlet} from "react-router-dom";
-import {Image} from "react-bootstrap";
-import B from '../BG/4kfon.png'
+import {Form, Row} from "react-bootstrap";
+import {useState} from "react";
 import '../compstyles/FindJobStyles.css'
+import CfpItem from "../components/CfpItem";
+import CfpList from "../components/CfpList";
 
-import Carousel from "react-bootstrap/Carousel";
-import A from "../BG/pr1.jpg";
-import C from "../BG/pr3.jpg";
-import D from '../BG/pr2.jpg';
+
+
+
+let Al=[{id:1,clas:'A-1',name:'test1',score:50},{id:2,clas:'A-1',name:'test12',score:50},{id:3,clas:'A-2',name:'test2',score:75},{id:4,clas:'A-2',name:'test22',score:80},{id:5,clas:'A-3',name:'test3',score:90},{id:6,clas:'A-3',name:'test32',score:100}];
 const Findjob = () => {
+    const [Cl,setCl]=useState('A-1')
+    let otr=[]
+    console.log('----------------------------')
+    for (let i = 0; i < Al.length; i++) {
+        if (Cl === Al[i].clas) {
+            otr.push(Al[i])
+            console.log(otr)
+        }
+    }
+
     return (
-        <div style={{width:1910,height:910}}>
-            <Image className='Im' src={B}/>
-            <div className="tx">
-                МЕСТО ЧТОБЫ НАЙТИ
-            </div>
-            <div className="tx1">
-                РАБОТУ
-            </div>
-            <div className="tx2">
-                БУДУЩЕГО
+        <Form>
+            <div>
+                <select value={Cl} onChange={e=>setCl(e.target.value)}>
+                    <option value="A-1">A-1</option>
+                    <option value="A-2">A-2</option>
+                    <option value="A-3">A-3</option>
+                </select>
             </div>
             <div>
-            <Carousel className="CR">
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 Imc"
-                        src={A}
-                        alt="First slide"
-                        style={{borderRadius:15}}
-                    />
-                    <Carousel.Caption>
-                        <h4 style={{color:"white"}}>найди работу мечты</h4>
-
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 Imc"
-                        src={D}
-                        alt="Second slide"
-                        style={{borderRadius:15}}
-                    />
-                    <Carousel.Caption>
-                        <h4 style={{color:"white"}}>здесь легко найти работу по душе</h4>
-
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 Imc"
-                        src={C}
-                        alt="Third slide"
-                        style={{borderRadius:15}}
-                    />
-                    <Carousel.Caption>
-                        <h4 style={{color:"white"}}>тысячи работников ждут вашего предложения</h4>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
+                <CfpList OFP={otr}/>
             </div>
-            <Outlet/>
-        </div>
+        </Form>
+
+
     );
 };
 
