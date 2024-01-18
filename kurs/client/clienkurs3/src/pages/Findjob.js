@@ -17,6 +17,7 @@ import {Slider,RangeSlider} from "rsuite";
 
 let Al=[{id:1,clas:'A-1',name:'test1',score:50},{id:2,clas:'A-1',name:'test12',score:50},{id:3,clas:'A-2',name:'test2',score:75},{id:4,clas:'A-2',name:'test22',score:80},{id:5,clas:'A-3',name:'test3',score:90},{id:6,clas:'A-3',name:'test32',score:100}];
 const Findjob = () => {
+    const [count, setCount]=useState(0)
     const [Cl,setCl]=useState('A-1')
     let otr=[]
     console.log('----------------------------')
@@ -28,7 +29,7 @@ const Findjob = () => {
     }
 
     return (
-
+        /*
         <Form>
             <div className='p-2'>
                 <select value={Cl} onChange={e=>setCl(e.target.value)}>
@@ -42,6 +43,7 @@ const Findjob = () => {
             </div>
         </Form>
 
+         */
         /*
         <Container className="d-flex justify-content-center align-items-center"
                    style = {{height:window.innerHeight - 54}}
@@ -112,6 +114,60 @@ const Findjob = () => {
             </Card>
         </Container>
          */
+    /*
+    <div>
+        <div className="SItem">
+            <div className="SItem_layout">
+                <div className='p-4'>
+                    <h2 className="d-flex justify-content-start">
+                        Чел
+                    </h2>
+                    <Image style={{width:'100px'}} src={A1}></Image>
+                </div>
+                <div className="p-2 mt-5">
+                    <Container>
+                        <Button className='p-2 mt-5 m-lg-1' onClick={()=>{if (count -5>=0) {setCount(count - 5)}}}>-5</Button>
+                        <Button className='p-2 mt-5 m-lg-1' onClick={()=>{if (count -1>=0) {setCount(count - 1)}}}>-1</Button>
+                        <Button className='p-2 mt-5 m-lg-1' onClick={()=>{if (count +1<=30) {setCount(count + 1)}}}>+1</Button>
+                        <Button className='p-2 mt-5 m-lg-1' onClick={()=>{if (count +5<=30) {setCount(count + 5)}}}>+5</Button>
+                        <ProgressBar>
+                            <ProgressBar variant="success" now={count} max={30} min={0}/>
+                        </ProgressBar>
+                        <div>
+                            Баллы: {count}
+                        </div>
+
+                    </Container>
+                </div>
+            </div>
+        </div>
+        <div className="d-flex justify-content-center align-items-center">
+            <Button >
+                Закончить урок
+            </Button>
+        </div>
+    </div>
+     */
+
+     <div>
+         <div className="SItem">
+             <div className="SItem_layout">
+                 <div>
+                     <h1 className="d-flex justify-content-center">
+                         Чел
+                     </h1>
+                 </div>
+                 <div>
+                     <ProgressBar className="mt-1" variant="success" now={50} />
+                     <div className="d-flex justify-content-center align-items-center">
+                         =>
+                     </div>
+                     <ProgressBar className="mt-1" variant="warning" now={60} />
+
+                 </div>
+             </div>
+         </div>
+     </div>
     );
 
 
